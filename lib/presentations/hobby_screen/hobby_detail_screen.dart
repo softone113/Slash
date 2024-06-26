@@ -253,6 +253,10 @@ class _HobbyDetailState extends State<HobbyDetail> {
                       ),
                     ),
                     Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(
+                            10),
+                      ),
                       child: Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 25.0),
                         child: Container(

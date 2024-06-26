@@ -302,20 +302,21 @@ class _HobbyScreenState extends State<HobbyScreen> {
                         if (snapshot.connectionState ==
                             ConnectionState.waiting) {
                           return Shimmer.fromColors(
-                              baseColor: Colors.grey[300]!,
-                              highlightColor: Colors.grey[100]!,
-                              child: HexagonOffsetGrid.evenFlat(
-                                  padding: const EdgeInsets.all(8.0),
-                                  columns: 5,
-                                  rows: 4,
-                                  buildTile: (col, row) => HexagonWidgetBuilder(
-                                    color: row.isEven
-                                        ? ColorResource.orangeColor
-                                        : Colors.grey[400]!,
-                                    elevation: 2.0,
-                                    padding: 2.0,
-                                  ), buildChild: (col, row) => Container(),
+                            baseColor: Colors.grey[300]!,
+                            highlightColor: Colors.grey[100]!,
+                            child: HexagonOffsetGrid.evenFlat(
+                              padding: const EdgeInsets.all(8.0),
+                              columns: 5,
+                              rows: 4,
+                              buildTile: (col, row) => HexagonWidgetBuilder(
+                                color: row.isEven
+                                    ? ColorResource.orangeColor
+                                    : Colors.grey[400]!,
+                                elevation: 2.0,
+                                padding: 2.0,
                               ),
+                              buildChild: (col, row) => Container(),
+                            ),
                           );
                         } else if (snapshot.hasData) {
                           int itemCount = snapshot.data!.length;
@@ -358,10 +359,6 @@ class _HobbyScreenState extends State<HobbyScreen> {
                                                           ['description'])));
 
                                           // Navigator.pushNamed(
-                                          //   context,
-                                          //   RouteName.hobbyDetail,
-                                          //   arguments: {
-                                          //     'imageUrl': snapshot.data![index]
                                           //         ['image'],
                                           //     'title': snapshot.data![index]
                                           //         ['title'],
@@ -371,7 +368,11 @@ class _HobbyScreenState extends State<HobbyScreen> {
                                           //     'description': snapshot
                                           //         .data![index]['description'],
                                           //   },
-                                          // );
+                                          // );  //   context,
+                                          //   RouteName.hobbyDetail,
+                                          //   arguments: {
+                                          //     'imageUrl': snapshot.data![index]
+
                                         },
                                         child: HexagonWidget.flat(
                                           height: 73,
